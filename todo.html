@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Weekly Workout Split</title>
+    <link href="todo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="todo.html">Workout Split</a>
+      <a href="goals.html">Goals</a>
+      <a href="log.html">Log</a>
+      <a href="profile.html">Profile</a>
+  </div>
+    <div class="container">
+        <h1>Weekly Workout Split</h1>
+
+        <!-- Day 1: Monday -->
+        <div class="day">
+            <h2>Monday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Bench Press -->
+                <div class="exercise">
+                    <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- Day 2: Tuesday -->
+        <div class="day">
+            <h2>Tuesday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Squats -->
+                <div class="exercise">
+                  <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- Day 3: Wednesday -->
+        <div class="day">
+            <h2>Wednesday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Deadlift -->
+                <div class="exercise">
+                  <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- Day 4: Thursday -->
+        <div class="day">
+            <h2>Thursday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Pull-Ups -->
+                <div class="exercise">
+                  <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- Day 5: Friday -->
+        <div class="day">
+            <h2>Friday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Dumbbell Rows -->
+                <div class="exercise">
+                  <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- Day 6: Saturday -->
+        <div class="day">
+            <h2>Saturday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Lunges -->
+                <div class="exercise">
+                  <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- Day 7: Sunday -->
+        <div class="day">
+            <h2>Sunday</h2>
+            <div class="exercises">
+                <!-- Exercise 1: Push-Ups -->
+                <div class="exercise">
+                  <input type="text" placeholder="enter day of split">
+                </div>
+            </div>
+            <button class="add-exercise">Add Exercise</button>
+        </div>
+
+        <!-- JavaScript to add exercises dynamically -->
+        <script>
+            const addButton = document.querySelectorAll('.add-exercise');
+            addButton.forEach(button => {
+                button.addEventListener('click', function () {
+                    const exercisesContainer = this.parentElement.querySelector('.exercises');
+                    const newExercise = document.createElement('div');
+                    newExercise.classList.add('exercise');
+                    newExercise.innerHTML = `
+                        <h3>Exercise: </h3>
+                        <input type="text" placeholder="Exercise Name">
+                        <input type="number" placeholder="Sets">
+                        <input type="number" placeholder="Reps">
+                    `;
+                    exercisesContainer.appendChild(newExercise);
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="profile.css" rel="stylesheet" type="text/css" />
+    <title>Profile | Kinetic Fitness Tracker</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="todo.html">Workout Split</a>
+        <a href="goals.html">Goals</a>
+        <a href="log.html">Log</a>
+        <a href="profile.html">Profile</a>
+    </div>
+
+    <div class="container">
+        <h2>Your Profile</h2>
+        <div class="profile-info">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <button id="editProfile">Save changes </button>
+        </div>
+        <h2>Your Achievements</h2>
+        <ul class="achievements-list">
+            <li>Completed 30 days of consistent workouts!</li>
+             <br>
+            <li>Reached 1000 total reps!</li>
+        </ul>
+        <h2>Your Goals</h2>
+        <ul class="goals-list">
+          <li>Lift a combined total weight of 45,000 pounds by the end of the month.</li>
+          <br>
+        <li>Gain 5 pounds of muscle in 3 months.</li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            if (username && password) {
+                let loginMessage = document.getElementById('loginMessage');
+                loginMessage.classList.remove('hidden');
+                loginMessage.style.animation = 'fadeInMessage 1s forwards';
+                setTimeout(function() {
+                    document.getElementById('name').value = "John Doe";
+                    document.getElementById('email').value = "johndoe@email.com";
+                }, 1000);
+            }
+        });
+
+        document.getElementById('editProfile').addEventListener('click', function() {
+            let nameInput = document.getElementById('name');
+            let emailInput = document.getElementById('email');
+            if (nameInput.readOnly) {
+                nameInput.readOnly = false;
+                emailInput.readOnly = false;
+                this.textContent = "Save Changes";
+            } else {
+                nameInput.readOnly = true;
+                emailInput.readOnly = true;
+                this.textContent = "Edit Profile";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

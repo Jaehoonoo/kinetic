@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lifting Rank Tracker</title>
+  <link href="goals.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="todo.html">Workout Split</a>
+      <a href="goals.html">Goal</a>
+      <a href="log.html">Log</a>
+      <a href="profile.html">Profile</a>
+  </div>
+  <header>
+    <h1>Lifting Rank Tracker</h1>
+  </header>
+
+  <main>
+    <h2>Monthly Lifting Goals</h2>
+    <ul>
+      <li>
+        <label><input type="checkbox"> January: 1000 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> February: 1500 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> March: 2000 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> April: 2500 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> May: 3000 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> June: 3500 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> July: 4000 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> August: 4500 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> September: 5000 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> October: 5500 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> November: 6000 pounds</label>
+      </li>
+      <li>
+        <label><input type="checkbox"> December: 6500 pounds</label>
+      </li>
+    </ul>
+  </main>
+  <script>
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    const progressElement = document.createElement("p");
+    progressElement.style.fontWeight = "bold";
+    progressElement.style.fontSize = "18px";
+    progressElement.textContent = "Total Weight Lifted: 0 pounds";
+
+    const ul = document.querySelector("ul");
+    ul.appendChild(progressElement);
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", updateProgress);
+    });
+
+    function updateProgress() {
+      let totalWeightLifted = 0;
+      checkboxes.forEach((checkbox, index) => {
+        if (checkbox.checked) {
+          totalWeightLifted += getGoalWeight(index);
+        }
+      });
+      progressElement.textContent = `Total Weight Lifted: ${totalWeightLifted} pounds`;
+    }
+
+    function getGoalWeight(monthIndex) {
+      const monthlyWeights = [
+        1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500
+      ];
+      return monthlyWeights[monthIndex];
+    }
+  </script>
+
+</body>
+</html>

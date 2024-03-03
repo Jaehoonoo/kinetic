@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #836141;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #836141;
+    transition: background-color 0.3s;
+}
+
+h1 {
+    text-align: center;
+    color: #fafafa;
+}
+
+.day {
+    border: 1px solid #f6f0eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #f6f0eb;
+    transition: background-color 0.3s;
+}
+
+.day h2 {
+    font-size: 24px;
+    color: #5C4033;
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f6f0eb;
+    transition: background-color 0.3s;
+}
+
+.exercises {
+    margin-top: 20px;
+}
+
+.exercise {
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.exercise p {
+    margin: 5px 0;
+}
+
+.exercise h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.exercise input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+.add-exercise {
+    display: block;
+    margin-top: 10px;
+    background-color: #5C4033;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #5C4033;
+    padding: 10px 0;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* added transform for a subtle lift */
+}
+
+.navbar a:hover, .navbar .active {
+    background-color: #5C4033;
+    transform: translateY(-2px); /* subtle lift effect */
+}
+.add-exercise:hover {
+    background-color: #967969;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
